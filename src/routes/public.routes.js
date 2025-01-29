@@ -8,7 +8,7 @@ const registerPublicRoutes = (app) => {
   app.post("/contact", contactValidator, PublicController.contactUs);
 
   // Route for residential quote calculation
-  app.get("/calc", PublicController.calculateResidentialQuote);
+  app.get("/calc/:building_type", PublicController.calculateResidentialQuote);
 };
 
 module.exports = { registerPublicRoutes };

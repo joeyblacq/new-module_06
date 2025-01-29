@@ -1,7 +1,10 @@
 const chai = require("chai");
 const sinon = require("sinon");
-const HealthController = require("../src/features/health/health.controller");
-const ResponseUtil = require("../src/shared/utils/response-util").ResponseUtil;
+const HealthController = require("../../../src/features/health/health.controller.js");
+const ResponseUtil = require("../../../src/shared/utils/response-util.js").ResponseUtil;
+
+const envName = process.env.ENVIRONMENT;
+const port = process.env.PORT;
 
 describe("HealthController", () => {
   afterEach(() => {
@@ -22,7 +25,7 @@ describe("HealthController", () => {
 
   // status test
   describe("#status()", () => {
-    it("respond with "`Environment '${envName}' running on port: ${port}`, (done) => {
+    it("respond with a status message", (done) => {
       sinon.stub(ResponseUtil, "respondOk").callsFake((res, data, message) => {
         chai.assert.equal(
           message,

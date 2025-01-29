@@ -11,7 +11,7 @@ const registerAgentRoutes = (app) => {
 
   app.put('/agent-update-info/:id', AgentController.updateAgentInfo);
 
-  app.post('/agent-delete/:id', AgentController.deleteAgent);
+  app.delete('/agent-delete/:id', AgentController.deleteAgent);
 }
 
 module.exports = {registerAgentRoutes};
