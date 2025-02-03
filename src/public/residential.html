@@ -29,7 +29,6 @@
 		<link href="assets/css/color_scheme/red.css" rel="stylesheet" type="text/css" id="color_scheme" />
 
 		<link rel="stylesheet" href="./assets/css/residential.css">
-    	<script src="./assets/js/residential.js" defer></script>
 	</head>
 
 	<body class="smoothscroll enable-animation">
@@ -181,7 +180,7 @@
 								delayin:500;
 								offsetxout:-50;
 								durationout:1000;" 
-								style="top:275px;left:50%;font-weight: bold; background: white; background: #A94545; height:40px; p-right:10px;p-left:10px;font-size:30px;line-height:37px;color:#fff;white-space: nowrap; padding:10px;">
+								style="top:275px;left:50%;font-weight: bold; background: white; backagentground: #A94545; height:40px; p-right:10px;p-left:10px;font-size:30px;line-height:37px;color:#fff;white-space: nowrap; padding:10px;">
 								Residential Buildings
 							</p>
 							<p class="ls-l" data-ls="
@@ -357,7 +356,24 @@
 				</div>
 			</section>
 			<!-- /BUSINESS MODEL -->
+			 
+			 <!-- AGENT TABLE -->
 
+
+			<h1 class="table-title">Agent Table</h1>
+
+			<table id="agentTable">
+				
+				<thead>
+					<tr>
+						<th onclick="sortTable(0)">Full Name</th>
+						<th onclick="sortTable(1)">Rating</th>
+						<th onclick="sortTable(2)">Fee</th>
+					</tr>
+				</thead>
+				<tbody>
+				</tbody>
+			</table>
 
 
 			<!-- PARALLAX -->
@@ -536,6 +552,7 @@
 
 		<!-- SCRIPT -->
 		<script src="assets/js/scripts.js"></script>
+		<script src="assets/js/residential.js"></script>
 
 		<!-- OPEN MODALS SCRIPT -->
 		<script type="text/javascript">
@@ -545,6 +562,36 @@
 				this.reset();
 			});
 		</script>
+
+		<!-- <script>
+			// Example data to populate the table
+			const agents = [
+				{ fullName: "", rating: 4.5, fee: 1500 },
+				{ fullName: "", rating: 4.8, fee: 2000 },
+				{ fullName: "", rating: 4.3, fee: 1800 },
+			];
+
+			// Reference to the table body
+			const tableBody = document.querySelector("#agentTable tbody");
+
+			// Format fees and populate the table
+			agents.forEach(agent => {
+				const row = document.createElement("tr");
+
+				row.innerHTML = `
+		            <td>${agent.fullName}</td>
+		            <td>${agent.rating}</td>
+		            <td>${formatCurrency(agent.fee)}</td>
+		        `;
+
+				tableBody.appendChild(row);
+			});
+
+			// Function to format numbers as currency
+			function formatCurrency(amount) {
+				return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(amount);
+			}
+		</script> -->
 
 	</body>
 </html>

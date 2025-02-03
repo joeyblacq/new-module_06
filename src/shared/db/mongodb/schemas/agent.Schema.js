@@ -1,6 +1,7 @@
 const mongoose = require('mongoose')
 
 const AgentSchema = new mongoose.Schema({
+    
     first_name: {
         type: String,
         trim: true,

@@ -8,14 +8,16 @@ const helloWorld = async(req, res) => {
 };
 
 const status = async(req,res) => {
-  const envName = process.env.ENV_NAME;
+  const envName = process.env.ENVIRONMENT;
   const message = `Environment '${envName}' running on port: ${port}`;
-  res.send(message);
+   ResponseUtil.respondOk(res, null, message); 
+  //  res.send(message);
 };
 
 const error = async(req,res) => {
-  res.status(400);
-  res.send('error');
+  ResponseUtil.respondOk(res, null, "error");
+  // res.send("error");
+  // res.status(400);
 };
 
 module.exports = {helloWorld, status, error};

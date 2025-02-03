@@ -1,9 +1,14 @@
-const PublicController = require('../features/public/public.controller');
-const MiddleWare = require ("../shared/middleware/base-middleware")
+const {
+  contactValidator,
+} = require("../shared/middleware/base-middleware.js");
+const PublicController = require("../features/public/public.controller");
+
 const registerPublicRoutes = (app) => {
-  app.post('/contact', PublicController.contactUs);
+  // Apply contactValidator middleware to the /contact route
+  app.post("/contact", contactValidator, PublicController.contactUs);
 
-  app.get('/calc/:building_type',MiddleWare.buildingTypeMiddleWare,PublicController.calculateResidentialQuote);
-}
+  // Route for residential quote calculation
+  app.get("/calc/:building_type", PublicController.calculateResidentialQuote);
+};
 
-module.exports = {registerPublicRoutes};
+module.exports = { registerPublicRoutes };

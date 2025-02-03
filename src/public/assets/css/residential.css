@@ -1,0 +1,56 @@
+/* General body styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+/* Header styling */
+h1 {
+    color: #0a65a0; /* Matches your preferred color */
+    text-align: center;
+}
+
+/* Table styling */
+table {
+    width: 80%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Table header styling */
+th, td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+/* Table header color */
+th {
+    background-color: rgb(169, 69, 69);
+    color: white;
+    cursor: pointer;
+}
+
+/* Zebra striping for table rows */
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Hover effect for rows */
+tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Color coding for ratings */
+td[data-rating="100"] {
+    color: green;
+}
+
+td[data-rating]:not([data-rating="100"]):not([data-rating^="9"]) {
+    color: purple;
+}
+
+td[data-rating^="9"]:not([data-rating="100"]) {
+    color: blue;
+}
